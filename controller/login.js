@@ -22,7 +22,7 @@ router.post("/",function(req,res){
     user.findwhere(obj,function(err,result){
       if(err)
       {
-          console.log("err")
+          console.log("err");
       }
       else{
           console.log(result,"nahhhhhh");
