@@ -11,10 +11,7 @@ router.get("/",function(req,res){
 
 router.post("/",function(req,res){
 
-    console.log(req.body,"ssssss")
-    req.body.pagename="login";
-    req.body.title="show data"
-    res.render("layout",req.body);
+  
 
     var obj={};
     obj.Username=req.body.Username;
@@ -23,15 +20,23 @@ router.post("/",function(req,res){
     obj.password=req.body.password;
 
     user.insert(obj,function(err,result){
-        if(err){
+        if(err)
+        {
             console.log("err",err);
-            req.body.pagename="login";
-            req.body.title="show";
             res.render("layout",req.body)
-            if(result){
-                res.render('/login');
-            }
         }
-    });
+            if(result){
+                console.log(result,"jhbdfvjhbdfjbdhjfbhvj")
+                res.redirect('/login');
+            }
+            
+        
+    })
+
 });
+
  module.exports=router;
+ 
+
+ 
+

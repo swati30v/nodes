@@ -1,0 +1,26 @@
+<p>data show!!!!!!!!!!!!!!!!!here</p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">contactno</th>
+      <th scope="col">email</th>
+      <th scope="col">password</th>
+      <th scope="col">edit</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+    <% for (var i =0; i < data.length;  i++ ) { %>
+      <tr>
+        <td><%= data[i].Username %></td>
+        <td><%= data[i].contactno %></td>
+        <td><%= data[i].email %></td>
+        <td><%= data[i].password %></td>
+        <td><a href="/userupdate/edit/<%=data[i]._id%>" onclick="myFunction()">edit</a></td>
+        <td><a href="/showdata/delete/<%=data[i]._id%>" onclick="probdf()">delete</a></td>
+      </tr>
+      <% } %>
+    </table>
+
