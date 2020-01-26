@@ -11,11 +11,11 @@ router.get("/logout",require("./logout"))
 router.use("/showdata",require("./showdata"));
 router.get("/userupdate",require("./userupdate"));
 
-function backedor(req,res,next){
-    if(req.session.user_loged_in){
-        res.redirect("./login")
-    }
-    next();
-}
+// function backedor(req,res,next){
+//     if(req.session.user_loged_in){
+//         res.redirect("./login")
+//     }
+//     next();
+// }
 
 module.exports=router;

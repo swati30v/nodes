@@ -5,7 +5,7 @@ var user=require("../model/user");
 
 router.get("/userupdate",function(req,res){
     console.log("user update page is runnig ");
-    var pagedata={"pagename":"userupdate","title":"userupdate page"};
+    var pagedata={"pagename":"userupdate","title":"userupdate page" };
     res.render("layout",pagedata)
 
 });
