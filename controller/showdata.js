@@ -17,11 +17,15 @@ router.get("/",function(req,res){
     })
 });
 router.get("/delete/:id",function(req,res){
-    var id=req.param.id;
+    var id=req.params.id;
     user.delete({_id:mongodb.ObjectId(id)},function(err,result){
-        console.log(result)
-        var pagedata={"title":"showdata","pagename":"showdata","data":result[0]};
-        res.render("/showdata")
+        if(err){
+            console.log(err)
+        }
+        if(result){
+            console.log("RRRRRRRRRRR",result,"RRRRRRRRRRRRRRRRRRR")
+     res.redirect("/showdata")
+    }
     })
 });
 module.exports=router;

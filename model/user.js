@@ -10,7 +10,7 @@ module.exports.insert=function(obj,cb){
 module.exports.find=function(cb){
     connect.init(function(err,client){
         var db=client.db("swati30v")
-        db.collection("user").find({ }).toArray(cb0);
+        db.collection("user").find({ }).toArray(cb);
     });
 }
 module.exports.findwhere=function(obj,cb){
@@ -28,8 +28,9 @@ module.exports.update=function(where,obj,cb){
 }
 
 module.exports.delete=function(where,cb){
+    console.log(where,"WHERE CONDITION")
     connect.init(function(err,client){
      var db=client.db("swati30v")
-     db.collection('user').remove(where,cb);
+     db.collection('user').deleteOne(where,cb);
     });
 }

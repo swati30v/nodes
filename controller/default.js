@@ -9,7 +9,7 @@ router.use("/signup",require("./signup"));
 router.use("/login",require("./login"));
 router.get("/logout",require("./logout"))
 router.use("/showdata",require("./showdata"));
-router.get("/userupdate",require("./userupdate"));
+router.use("/userupdate",require("./userupdate"));
 
 // function backedor(req,res,next){
 //     if(req.session.user_loged_in){

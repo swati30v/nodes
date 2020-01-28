@@ -22,12 +22,22 @@ router.post("/",function(req,res){
         }
     })
 });
-router.get("edit/:id",function(req,res){
+
+
+
+router.get("/edit/:id",function(req,res){
     var id=req.params.id;
-    user.findwhere=({_id:mongodb.ObjectId(id)},function(err,result){
+    console.log("sanjay",id)
+    user.findwhere({_id:mongodb.ObjectId(id)},function(err,result){
+        if (err) {
+            console.log(err,"jdsfbdsjsf")
+        }
+        if(result){
+            console.log("SSSSSSSSSSSSSSSSSSSSS")
         console.log(result)
-        var pagedata={"title":"userupdate","pagename":"user page","data":result[0]};
+        var pagedata={"title":"userupdate","pagename":"userupdate","data":result[0]};
         res.render("layout",pagedata)
+    }
     })
 });
 module.exports=router;
